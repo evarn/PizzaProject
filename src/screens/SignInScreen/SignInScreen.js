@@ -11,8 +11,10 @@ import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
 import TabNavigation from '../../navigation/tabNavigation';
-
+import {useDispatch} from 'react-redux';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {signIn} from '../../features/auth/authSlice';
+
 const Stack = createNativeStackNavigator();
 
 const SignInScreen = () => {
@@ -22,8 +24,11 @@ const SignInScreen = () => {
 
   const navigation = useNavigation();
 
+  const dispatch = useDispatch();
+
   const onSignInPressed = () => {
     console.warn('onSignInPressed');
+    dispatch(signIn({username}));
     //
     //
     navigation.navigate('ScreenTab');

@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {useSelector} from 'react-redux';
 
 const HomePage = () => {
+  const login = useSelector(state => state.auth.username);
   return (
     <View style={styles.root}>
-      <Text style={styles.text}> Ееее бой HomePage</Text>
+      <Text style={styles.text}> {login} </Text>
     </View>
   );
 };

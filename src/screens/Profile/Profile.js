@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const HomePage = () => {
+const Profile = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.text}> Ееее бой HomePage</Text>
+      <Text style={styles.text}> Ееее бой Profile</Text>
     </View>
   );
 };
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomePage;
+export default Profile;

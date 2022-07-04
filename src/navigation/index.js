@@ -1,19 +1,36 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomePage from './../screens/HomePage/';
+
 import SignInScreen from './../screens/SignInScreen/';
+import TabNavigation from './tabNavigation';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="HomePage" component={HomePage} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <Stack.Navigator>   setIsSignedIn ? (
+    //  <>
+    //    <Stack.Screen
+    //       name="ScreenTab"
+    //       component={TabNavigation}
+    //       options={{headerShown: false}}
+    //     />
+    //   </>
+    //   ) : (
+    //   <>
+    //     <Stack.Screen name="SignIn" component={SignInScreen} />
+    //   </>
+    //   );
+    // </Stack.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name="SignIn" component={SignInScreen} />
+      <Stack.Screen
+        name="ScreenTab"
+        component={TabNavigation}
+        options={{headerShown: true}}
+      />
+    </Stack.Navigator>
   );
 };
 

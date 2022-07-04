@@ -10,6 +10,10 @@ import Logo from '../../../assets/PizzaLogo.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
+import TabNavigation from '../../navigation/tabNavigation';
+
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 
 const SignInScreen = () => {
   const {height} = useWindowDimensions();
@@ -22,7 +26,7 @@ const SignInScreen = () => {
     console.warn('onSignInPressed');
     //
     //
-    navigation.navigate('HomePage');
+    navigation.navigate('ScreenTab');
   };
 
   const onForgotPasswordPressed = () => {

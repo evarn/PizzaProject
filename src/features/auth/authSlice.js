@@ -1,6 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-
 const initialState = {
   isSignedIn: false,
   username: '',
@@ -14,7 +13,7 @@ export const authSlice = createSlice({
     // Проверка
     signIn: (state, action) => {
       state.isSignedIn = true;
-      state.username = action.payload.username;
+      state.username = action.payload;
       return state;
     },
   },

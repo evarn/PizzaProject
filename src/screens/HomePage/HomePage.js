@@ -4,9 +4,11 @@ import {useSelector} from 'react-redux';
 
 const HomePage = () => {
   const login = useSelector(state => state.auth.username);
+  console.warn({login});
+
   return (
     <View style={styles.root}>
-      <Text style={styles.text}> {login} </Text>
+      <Text style={styles.text}> Ееее бой {login} </Text>
     </View>
   );
 };

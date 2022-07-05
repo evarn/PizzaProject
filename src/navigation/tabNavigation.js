@@ -1,7 +1,6 @@
 import React from 'react';
 import HomePage from './../screens/HomePage/';
 import Profile from './../screens/Profile/';
-import SignInScreen from './../screens/SignInScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();

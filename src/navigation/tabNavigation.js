@@ -8,7 +8,10 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      tabBarOptions={{activeTintColor: '#ffb400', inactiveTintColor: 'gray'}}
+      tabBarOptions={{
+        activeTintColor: '#ffb400',
+        inactiveTintColor: 'gray',
+      }}
       screenOptions={{headerShown: false}}>
       <Tab.Screen name="HomePage" component={HomePage} />
       <Tab.Screen name="Profile" component={Profile} />

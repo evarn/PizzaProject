@@ -1,15 +1,18 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {useSelector} from 'react-redux';
 
 const HomePage = () => {
   const login = useSelector(state => state.auth.username);
+
   console.warn({login});
 
   return (
-    <View style={styles.root}>
-      <Text style={styles.text}> Ееее бой {login} </Text>
-    </View>
+    <ScrollView>
+      <View style={styles.root}>
+        <Text style={styles.text}>Ееее бой {login}</Text>
+      </View>
+    </ScrollView>
   );
 };
 

@@ -9,18 +9,21 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
-import {store} from './src/store/store';
+import {store, persistor} from './src/store/store.js';
+import {PersistGate} from 'redux-persist/integration/react';
 import Navigation from './src/navigation';
 import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.root}>
-        <NavigationContainer>
-          <Navigation />
-        </NavigationContainer>
-      </SafeAreaView>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaView style={styles.root}>
+          <NavigationContainer>
+            <Navigation />
+          </NavigationContainer>
+        </SafeAreaView>
+      </PersistGate>
     </Provider>
   );
 };

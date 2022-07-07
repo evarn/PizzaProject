@@ -23,11 +23,16 @@ const SignInScreen = () => {
   const dispatch = useDispatch();
 
   const onSignInPressed = () => {
-    console.warn('onSignInPressed');
-    dispatch(signIn(username));
-    // Проверка
-    //
-    navigation.navigate('ScreenTab');
+    if (!(username === '' || password === '')) {
+      console.warn('onSignInPressed');
+
+      dispatch(signIn(username));
+      // Проверка
+      //
+      navigation.navigate('ScreenTab');
+    } else {
+      console.warn('enter the password');
+    }
   };
 
   const onForgotPasswordPressed = () => {
@@ -51,7 +56,6 @@ const SignInScreen = () => {
           value={username}
           setValue={setUsername}
         />
-
         <CustomInput
           placeholder="Password"
           value={password}

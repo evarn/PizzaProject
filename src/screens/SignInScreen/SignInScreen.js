@@ -10,6 +10,9 @@ import Logo from '../../../assets/PizzaLogo.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {signIn} from '../../features/auth/authSlice';
 
 const SignInScreen = () => {
   const {height} = useWindowDimensions();
@@ -17,12 +20,19 @@ const SignInScreen = () => {
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const onSignInPressed = () => {
-    console.warn('onSignInPressed');
-    //
-    //
-    navigation.navigate('HomePage');
+    if (!(username === '' || password === '')) {
+      console.warn('onSignInPressed');
+
+      dispatch(signIn(username));
+      // Проверка
+      //
+      navigation.navigate('ScreenTab');
+    } else {
+      console.warn('enter the password');
+    }
   };
 
   const onForgotPasswordPressed = () => {
@@ -46,7 +56,6 @@ const SignInScreen = () => {
           value={username}
           setValue={setUsername}
         />
-
         <CustomInput
           placeholder="Password"
           value={password}
